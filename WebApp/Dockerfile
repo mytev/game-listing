@@ -2,6 +2,11 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 WORKDIR /app
 
+# Fetch and install Node 16. Make sure to include the --yes parameter 
+# to automatically accept prompts during install, or it'll fail.
+RUN curl --silent --location https://deb.nodesource.com/setup_16.x | bash -
+RUN apt-get install --yes nodejs
+
 # Copy csproj and restore as distinct layers
 COPY . .
 RUN dotnet restore

@@ -3,6 +3,11 @@
   <PropertyGroup>
     <TargetFramework>net5</TargetFramework>
     <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+    <SpaRoot>Spa\</SpaRoot>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,76 +23,12 @@
     <Compile Remove="bin\**" />
     <Compile Remove="obj\**" />
     <Content Remove="$(SpaRoot)**" />
-    <Content Remove="bin\**" />
-    <Content Remove="obj\**" />
     <EmbeddedResource Remove="bin\**" />
     <EmbeddedResource Remove="obj\**" />
     <None Remove="$(SpaRoot)**" />
     <None Remove="bin\**" />
     <None Remove="obj\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Api.csproj" />
-    <None Remove="Api.csproj.user" />
-    <None Remove="bin\Debug\net5\Api.deps.json" />
-    <None Remove="bin\Debug\net5\Api.dll" />
-    <None Remove="bin\Debug\net5\Api.exe" />
-    <None Remove="bin\Debug\net5\Api.pdb" />
-    <None Remove="bin\Debug\net5\Api.runtimeconfig.dev.json" />
-    <None Remove="bin\Debug\net5\Api.runtimeconfig.json" />
-    <None Remove="bin\Debug\net5\appsettings.Development.json" />
-    <None Remove="bin\Debug\net5\appsettings.json" />
-    <None Remove="bin\Debug\net5\DnsClient.dll" />
-    <None Remove="bin\Debug\net5\Features\Listings\UITest.json" />
-    <None Remove="bin\Debug\net5\Infrastructure.dll" />
-    <None Remove="bin\Debug\net5\Infrastructure.pdb" />
-    <None Remove="bin\Debug\net5\MongoDB.Bson.dll" />
-    <None Remove="bin\Debug\net5\MongoDB.Driver.Core.dll" />
-    <None Remove="bin\Debug\net5\MongoDB.Driver.dll" />
-    <None Remove="bin\Debug\net5\MongoDB.Libmongocrypt.dll" />
-    <None Remove="bin\Debug\net5\ref\Api.dll" />
-    <None Remove="bin\Debug\net5\runtimes\linux\native\libmongocrypt.so" />
-    <None Remove="bin\Debug\net5\runtimes\osx\native\libmongocrypt.dylib" />
-    <None Remove="bin\Debug\net5\runtimes\win\native\libzstd.dll" />
-    <None Remove="bin\Debug\net5\runtimes\win\native\mongocrypt.dll" />
-    <None Remove="bin\Debug\net5\runtimes\win\native\snappy32.dll" />
-    <None Remove="bin\Debug\net5\runtimes\win\native\snappy64.dll" />
-    <None Remove="bin\Debug\net5\SharpCompress.dll" />
-    <None Remove="obj\Api.csproj.nuget.dgspec.json" />
-    <None Remove="obj\Api.csproj.nuget.g.props" />
-    <None Remove="obj\Api.csproj.nuget.g.targets" />
-    <None Remove="obj\Debug\net5\.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" />
-    <None Remove="obj\Debug\net5\Api.AssemblyInfo.cs" />
-    <None Remove="obj\Debug\net5\Api.AssemblyInfoInputs.cache" />
-    <None Remove="obj\Debug\net5\Api.assets.cache" />
-    <None Remove="obj\Debug\net5\Api.csproj.AssemblyReference.cache" />
-    <None Remove="obj\Debug\net5\Api.csproj.CopyComplete" />
-    <None Remove="obj\Debug\net5\Api.csproj.CoreCompileInputs.cache" />
-    <None Remove="obj\Debug\net5\Api.csproj.FileListAbsolute.txt" />
-    <None Remove="obj\Debug\net5\Api.dll" />
-    <None Remove="obj\Debug\net5\Api.GeneratedMSBuildEditorConfig.editorconfig" />
-    <None Remove="obj\Debug\net5\Api.genruntimeconfig.cache" />
-    <None Remove="obj\Debug\net5\Api.MvcApplicationPartsAssemblyInfo.cache" />
-    <None Remove="obj\Debug\net5\Api.pdb" />
-    <None Remove="obj\Debug\net5\Api.RazorTargetAssemblyInfo.cache" />
-    <None Remove="obj\Debug\net5\apphost.exe" />
-    <None Remove="obj\Debug\net5\ref\Api.dll" />
-    <None Remove="obj\Debug\net5\staticwebassets\Api.StaticWebAssets.Manifest.cache" />
-    <None Remove="obj\Debug\net5\staticwebassets\Api.StaticWebAssets.xml" />
-    <None Remove="obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
-    <None Remove="obj\Debug\netcoreapp3.1\Api.AssemblyInfo.cs" />
-    <None Remove="obj\Debug\netcoreapp3.1\Api.AssemblyInfoInputs.cache" />
-    <None Remove="obj\Debug\netcoreapp3.1\Api.assets.cache" />
-    <None Remove="obj\Debug\netcoreapp3.1\Api.csprojAssemblyReference.cache" />
-    <None Remove="obj\project.assets.json" />
-    <None Remove="obj\project.nuget.cache" />
-    <None Remove="obj\Release\net5\.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" />
-    <None Remove="obj\Release\net5\Api.AssemblyInfo.cs" />
-    <None Remove="obj\Release\net5\Api.AssemblyInfoInputs.cache" />
-    <None Remove="obj\Release\net5\Api.assets.cache" />
-    <None Remove="obj\Release\net5\Api.GeneratedMSBuildEditorConfig.editorconfig" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
