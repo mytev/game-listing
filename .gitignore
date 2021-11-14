@@ -58,7 +58,7 @@ publish/
 !*.[Cc]ache/
 
 
-/node_modules
+node_modules/
 
 # Unity app
 UnityApp/Logs
