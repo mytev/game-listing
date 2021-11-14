@@ -15,16 +15,16 @@ The Api will be exposed on port 5000
 
 ## Challenges encountered
 
--   Debugging why the images weren't being displayed
-    The main challenge was to understand the project, the components and the tools that were used to display the panels
+-   Debugging why the images weren't being displayed.\
+    The main challenge was to understand the project, the components and the tools that were used to display the panels.\
     I ended up fixing the image directly in the UIPanel in order to only load the listing when we render the UIPanel,
-    that would work well with a carousel with infinite scrolling (load the next page when scroll position is near the end)
+    that would work well with a carousel with infinite scrolling (load the next page when scroll position is near the end).
 
--   Hooking up everything nicely
-    Configure the project to serve the Spa, then make sure the dockerfile can properly build the image
+-   Hooking up everything nicely.\
+    Configure the project to serve the Spa, then make sure the dockerfile can properly build the image.
 
 ## Possible Improvements
 
 -   Add pagination to the listings endpoints in order to make it scalable.\
     In the UnityApp, the carousel needs to be updated so it can fetch the next page when the scrolling nears the end.\
-    It also doesn't need to render all the panels at once, only the visible one with a defined margin (i.e. 10 panels after and before)
+    It also doesn't need to render all the panels at once, only the visible one with a defined margin (i.e. 10 panels after and before).
