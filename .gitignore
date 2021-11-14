@@ -57,9 +57,6 @@ publish/
 # but keep track of directories ending in .cache
 !*.[Cc]ache/
 
-
-node_modules/
-
 # Unity app
 UnityApp/Logs
 UnityApp/Library
